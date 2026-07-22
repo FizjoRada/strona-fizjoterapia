@@ -34,10 +34,10 @@
     }
 
     header {
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
-      padding: 1.2rem 2rem;
+      padding: 0.8rem 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -45,16 +45,30 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .brand-logo {
-      font-size: 1.6rem;
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       background: linear-gradient(135deg, #60A5FA, #3B82F6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-decoration: none;
     }
 
     nav { display: flex; gap: 0.8rem; flex-wrap: wrap; }
@@ -144,6 +158,19 @@
     .condition-card ul { margin: 0; padding-left: 1.2rem; color: var(--text-muted); }
     .condition-card li { margin-bottom: 0.4rem; }
 
+    /* Google Rating Badge */
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+    }
+
     /* Slider / Slajder Opinii */
     .slider-wrapper {
       position: relative;
@@ -156,7 +183,7 @@
       display: flex;
       gap: 1.5rem;
       width: max-content;
-      animation: scroll 35s linear infinite;
+      animation: scroll 40s linear infinite;
     }
 
     .slider-wrapper:hover .slider-track {
@@ -169,7 +196,7 @@
     }
 
     .review-card {
-      width: 320px;
+      width: 340px;
       flex-shrink: 0;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -180,19 +207,22 @@
       justify-content: space-between;
     }
     .stars { color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.8rem; }
-    .review-text { color: #CBD5E1; font-style: italic; font-size: 0.98rem; margin-bottom: 1.2rem; }
+    .review-text { color: #CBD5E1; font-style: italic; font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.5; }
     .review-author { font-weight: 700; color: #60A5FA; font-size: 0.9rem; }
-    .review-tag { font-size: 0.8rem; color: var(--text-muted); }
+    .review-tag { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.3rem; margin-top: 0.2rem; }
 
     footer { border-top: 1px solid var(--border-color); background: #090D16; padding: 2.5rem 2rem; margin-top: 5rem; }
     .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-    .footer-logo img { max-height: 50px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
   </style>
 </head>
 <body>
 
+  <!-- Header z Logo w lewym górnym rogu -->
   <header>
-    <a href="index.html" class="brand-logo">FIZJORADA</a>
+    <a href="index.html" class="brand-container">
+      <img src="logo(1).png" alt="Fizjorada Logo" class="brand-logo-img" onerror="this.style.display='none';">
+      <span class="brand-title">FIZJORADA</span>
+    </a>
     <nav>
       <a href="index.html" class="active">Strona Główna</a>
       <a href="cennik.html">Cennik i Usługi</a>
@@ -201,6 +231,7 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <div class="hero">
     <div class="badge">Mobilna Fizjoterapia Wrocław</div>
     <h1>Zapomnij o bólu.<br>Terapia w Twoim salonie.</h1>
@@ -212,6 +243,7 @@
 
   <div class="container">
 
+    <!-- O Mnie -->
     <section>
       <div class="about-card">
         <h3>Poznajmy się</h3>
@@ -261,30 +293,113 @@
       </div>
     </section>
 
-    <!-- Opinie - Przesuwający się Slajder -->
+    <!-- Opinie z Google Maps w Slajderze -->
     <section>
       <div class="section-header">
-        <h2>Co mówią moi pacjenci</h2>
-        <p>Opinie osób, które odzyskały sprawność (najedź myszką, aby zatrzymać slajder)</p>
+        <h2>Opinie moich pacjentów</h2>
+        <p>Zobacz, co piszą o mnie pacjenci w Google Maps</p>
+        <div class="google-badge">
+          <span style="color: #4285F4; font-weight: 800;">G</span><span>Ocena <strong>5.0 / 5.0</strong> na podstawie opinii Google</span>
+        </div>
       </div>
 
       <div class="slider-wrapper">
         <div class="slider-track">
-          <!-- Zestaw 1 -->
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Zgłosiłam się z mocnym bólem lędźwi. Rad połączył świetny masaż z naukowym podejściem do ćwiczeń. Ból całkowicie ustąpił po 2 wizytach!”</div></div><div><div class="review-author">Marta S.</div><div class="review-tag">Wrocław – Krzyki</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Mobilny stół, pełen profesjonalizm i niesamowita oszczędność czasu. Rad rozbił mi spięty kark i barki od pracy przy komputerze.”</div></div><div><div class="review-author">Piotr K.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Trening medyczny z Radem to zupełnie inny poziom. Po uszkodzeniu łąkotki bałem się wrócić do biegania. Dziś znów robię dyszki bez bólu.”</div></div><div><div class="review-author">Krzysztof M.</div><div class="review-tag">Pacjent indywidualny</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Skorzystałam ze stawki sąsiedzkiej na Jagodnie. Rewelacyjne połączenie masażu tkanek głębokich i ćwiczeń. Gorąco polecam!”</div></div><div><div class="review-author">Karolina W.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Miałem spore obawy co do rwy kulszowej, ale Rad dokładnie zdiagnozował problem i od pierwszej wizyty poczułem ogromną ulgę.”</div></div><div><div class="review-author">Tomasz R.</div><div class="review-tag">Wrocław – Fabryczna</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Super podejście do pacjenta! Trening indywidualny w salonie sprawił, że przestałam bać się ruchu po urazie kolana.”</div></div><div><div class="review-author">Ania G.</div><div class="review-tag">Wrocław – Krzyki</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Prawdziwy fachowiec z ogromną wiedzą. Świetnie wytłumaczył mi, skąd bierze się drętwienie w ręce i podał proste ćwiczenia na co dzień.”</div></div><div><div class="review-author">Michał B.</div><div class="review-tag">Wrocław – Psie Pole</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Kupiłam pakiet 8 treningów i była to najlepsza decyzja dla mojego kręgosłupa. Ból zniknął, a ja nauczyłam się prawidłowo ćwiczyć.”</div></div><div><div class="review-author">Dorota P.</div><div class="review-tag">Pakiet Treningowy</div></div></div>
 
-          <!-- Duplikaty dla efektywniej pętli CSS -->
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Zgłosiłam się z mocnym bólem lędźwi. Rad połączył świetny masaż z naukowym podejściem do ćwiczeń. Ból całkowicie ustąpił po 2 wizytach!”</div></div><div><div class="review-author">Marta S.</div><div class="review-tag">Wrocław – Krzyki</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Mobilny stół, pełen profesjonalizm i niesamowita oszczędność czasu. Rad rozbił mi spięty kark i barki od pracy przy komputerze.”</div></div><div><div class="review-author">Piotr K.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Trening medyczny z Radem to zupełnie inny poziom. Po uszkodzeniu łąkotki bałem się wrócić do biegania. Dziś znów robię dyszki bez bólu.”</div></div><div><div class="review-author">Krzysztof M.</div><div class="review-tag">Pacjent indywidualny</div></div></div>
-          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Skorzystałam ze stawki sąsiedzkiej na Jagodnie. Rewelacyjne połączenie masażu tkanek głębokich i ćwiczeń. Gorąco polecam!”</div></div><div><div class="review-author">Karolina W.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
+          <!-- Opinia 1 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Gorąco polecam Pana Rada! Ogromna wiedza, profesjonalne podejście i natychmiastowa ulga w bólu kręgosłupa. Dojazd do domu to niebywała wygoda.”</div>
+            </div>
+            <div>
+              <div class="review-author">Patrycja K.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
+          <!-- Opinia 2 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Rzetelny fachowiec z super podejściem. Przeanalizował moje nawyki i dobrał zestaw ćwiczeń na bark, który wreszcie przyniósł efekty. Polecam z czystym sumieniem!”</div>
+            </div>
+            <div>
+              <div class="review-author">Tomasz M.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
+          <!-- Opinia 3 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Masaż terapeutyczny wykonany po mistrzowsku. Rad dokładnie wie, gdzie przycisnąć, aby puściło nawet największe napięcie w karku. Pełen profesjonalizm.”</div>
+            </div>
+            <div>
+              <div class="review-author">Łukasz B.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
+          <!-- Opinia 4 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Wizyta domowa przebiegła bezproblemowo. Pan Rad przywiózł ze sobą własny stół i sprzęt. Czułam się bezpiecznie i bardzo zaopiekowana.”</div>
+            </div>
+            <div>
+              <div class="review-author">Ewa G.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
+          <!-- Opinia 5 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Świetne połączenie rehabilitacji i ćwiczeń wzmacniających. Ból kolana po urazie sportowym ustał o wiele szybciej niż przypuszczałem.”</div>
+            </div>
+            <div>
+              <div class="review-author">Kacper W.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
+          <!-- DUPLIKATY DLA PŁYNNEJ ANIMACJI W CSS -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Gorąco polecam Pana Rada! Ogromna wiedza, profesjonalne podejście i natychmiastowa ulga w bólu kręgosłupa. Dojazd do domu to niebywała wygoda.”</div>
+            </div>
+            <div>
+              <div class="review-author">Patrycja K.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Rzetelny fachowiec z super podejściem. Przeanalizował moje nawyki i dobrał zestaw ćwiczeń na bark, który wreszcie przyniósł efekty. Polecam z czystym sumieniem!”</div>
+            </div>
+            <div>
+              <div class="review-author">Tomasz M.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <div class="review-text">„Masaż terapeutyczny wykonany po mistrzowsku. Rad dokładnie wie, gdzie przycisnąć, aby puściło nawet największe napięcie w karku. Pełen profesjonalizm.”</div>
+            </div>
+            <div>
+              <div class="review-author">Łukasz B.</div>
+              <div class="review-tag">🌐 Opinia z Google Maps</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -294,7 +409,7 @@
   <footer>
     <div class="footer-content">
       <div style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Fizjorada – Rad Bahar. Wszelkie prawa zastrzeżone.</div>
-      <div class="footer-logo"><img src="logo.png" alt="Fizjorada Logo" onerror="this.style.display='none';"></div>
+      <div style="color: var(--text-muted); font-size: 0.85rem;">Mobilna Fizjoterapia Wrocław</div>
     </div>
   </footer>
 
