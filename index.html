@@ -56,7 +56,7 @@
     }
 
     .brand-logo-img {
-      height: 45px;
+      height: 48px;
       width: auto;
       object-fit: contain;
     }
@@ -132,7 +132,7 @@
 
     .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
 
-    /* Sekcja O mnie ze zdjęciem */
+    /* Sekcja O mnie (bez zdjęcia) */
     .about-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -141,25 +141,9 @@
       margin-bottom: 4rem;
       position: relative;
       overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 2rem;
-      align-items: center;
     }
     .about-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--primary-gradient); }
     .about-card h3 { font-size: 1.5rem; margin-top: 0; color: #60A5FA; }
-    .about-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid var(--border-color);
-    }
-
-    @media (max-width: 768px) {
-      .about-card { grid-template-columns: 1fr; }
-      .about-img { height: 200px; }
-    }
 
     .section-header { margin-bottom: 2.5rem; }
     .section-header h2 { font-size: 2rem; font-weight: 800; margin: 0 0 0.5rem 0; letter-spacing: -0.5px; }
@@ -174,7 +158,7 @@
     .condition-card ul { margin: 0; padding-left: 1.2rem; color: var(--text-muted); }
     .condition-card li { margin-bottom: 0.4rem; }
 
-    /* Galeria / Baner wizualny */
+    /* Baner ze zdjęciami zabiegów */
     .photo-banner {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -268,10 +252,10 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header ze ścieżką do pliku ze spacją w nazwie -->
   <header>
     <a href="index.html" class="brand-container">
-      <img src="logo.png" alt="Logo" class="brand-logo-img" onerror="this.style.display='none';">
+      <img src="logo%20(1).png" alt="Fizjorada Logo" class="brand-logo-img" onerror="this.style.display='none';">
       <span class="brand-title">FIZJORADA</span>
     </a>
     <nav>
@@ -294,23 +278,18 @@
 
   <div class="container">
 
-    <!-- O Mnie ze zdjęciem -->
+    <!-- O Mnie (sam tekst) -->
     <section>
       <div class="about-card">
-        <div>
-          <h3>Poznajmy się</h3>
-          <p style="font-size: 1.1rem; color: #E2E8F0; margin-bottom: 1rem;">Nazywam się <strong>Rad Bahar</strong>.</p>
-          <p style="color: var(--text-muted); margin: 0;">
-            Postanowiłem ułatwić życie mieszkańcom Wrocławia i ruszyłem z Mobilną Fizjoterapią. Zamiast tracić czas w korkach i stać w kolejce do przychodni, możecie otrzymać profesjonalną pomoc bezpośrednio w zaciszu własnego domu. Pomagam skutecznie pozbyć się bólu łącząc masaż z treningiem indywidualnym tak, aby problem nie wracał.
-          </p>
-        </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Fizjoterapia" class="about-img">
-        </div>
+        <h3>Poznajmy się</h3>
+        <p style="font-size: 1.1rem; color: #E2E8F0; margin-bottom: 1rem;">Nazywam się <strong>Rad Bahar</strong>.</p>
+        <p style="color: var(--text-muted); margin: 0;">
+          Postanowiłem ułatwić życie mieszkańcom Wrocławia i ruszyłem z Mobilną Fizjoterapią. Zamiast tracić czas w korkach i stać w kolejce do przychodni, możecie otrzymać profesjonalną pomoc bezpośrednio w zaciszu własnego domu. Pomagam skutecznie pozbyć się bólu łącząc masaż z treningiem indywidualnym tak, aby problem nie wracał.
+        </p>
       </div>
     </section>
 
-    <!-- Baner ze zdjęciami zabiegów / aktywności -->
+    <!-- Baner wizualny ze zdjęciami -->
     <section>
       <div class="photo-banner">
         <div class="photo-item">
