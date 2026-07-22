@@ -24,39 +24,33 @@
     header {
       background-color: #fff;
       border-bottom: 2px solid #E2E8F0;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .logo-container img {
-      max-height: 120px; /* Duże, wyraziste logo */
-      width: auto;
-    }
-
-    .logo-fallback {
-      font-size: 2.5rem;
+    .brand-title {
+      font-size: 1.8rem;
       font-weight: bold;
       color: var(--primary);
+      text-decoration: none;
     }
 
     nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     nav a {
       color: var(--primary);
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
-      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
       border-radius: 6px;
-      transition: background 0.2s;
     }
 
     nav a:hover, nav a.active {
@@ -85,19 +79,25 @@
     footer {
       background: var(--primary);
       color: white;
-      text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
       margin-top: 4rem;
+    }
+
+    footer img {
+      max-height: 60px;
+      width: auto;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="Fizjorada Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <div class="logo-fallback" style="display:none;">Fizjorada</div>
-    </div>
+    <a href="index.html" class="brand-title">FIZJORADA</a>
     <nav>
       <a href="index.html" class="active">Strona Główna</a>
       <a href="cennik.html">Cennik i Usługi</a>
@@ -108,7 +108,7 @@
 
   <div class="hero">
     <h1>Mobilna Fizjoterapia Wrocław</h1>
-    <p>Profesjonalna pomoc fizjoterapeutyczna w Twoim domu. Bez wychodzeniai stania w korkach.</p>
+    <p>Profesjonalna pomoc fizjoterapeutyczna w Twoim domu. Bez wychodzenia z salonu i stania w korkach.</p>
     <a href="tel:+48537843652" style="background: var(--highlight); color: #000; padding: 0.8rem 1.8rem; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;">Zadzwoń: 537 843 652</a>
   </div>
 
@@ -122,11 +122,12 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Fizjorada – Rad Bahar</p>
+    <div>&copy; 2026 Fizjorada – Rad Bahar</div>
+    <!-- Logo w rogu stopki -->
+    <div>
+      <img src="logo.png" alt="Fizjorada Logo" onerror="this.style.display='none';">
+    </div>
   </footer>
-
-</body>
-</html>
 
 </body>
 </html>
