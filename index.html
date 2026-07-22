@@ -30,9 +30,9 @@
       line-height: 1.6;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
 
-    /* Modern Navigation Header */
     header {
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(12px);
@@ -57,12 +57,7 @@
       text-decoration: none;
     }
 
-    nav {
-      display: flex;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
-
+    nav { display: flex; gap: 0.8rem; flex-wrap: wrap; }
     nav a {
       color: var(--text-muted);
       text-decoration: none;
@@ -72,13 +67,8 @@
       border-radius: 8px;
       transition: all 0.2s ease;
     }
+    nav a:hover, nav a.active { color: #fff; background: rgba(255, 255, 255, 0.06); }
 
-    nav a:hover, nav a.active {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    /* Hero Section */
     .hero {
       position: relative;
       padding: 5rem 1.5rem 4rem 1.5rem;
@@ -109,12 +99,7 @@
       letter-spacing: -1px;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      max-width: 720px;
-      margin: 0 auto 2rem auto;
-    }
+    .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 2rem auto; }
 
     .cta-btn {
       display: inline-flex;
@@ -130,37 +115,10 @@
       box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
       transition: all 0.2s ease;
     }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(37, 99, 235, 0.5); }
 
-    .cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.5);
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
 
-    /* Main Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    .section-header {
-      margin-bottom: 2.5rem;
-    }
-
-    .section-header h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin: 0 0 0.5rem 0;
-      letter-spacing: -0.5px;
-    }
-
-    .section-header p {
-      color: var(--text-muted);
-      margin: 0;
-      font-size: 1.05rem;
-    }
-
-    /* About Section Card */
     .about-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -170,83 +128,49 @@
       position: relative;
       overflow: hidden;
     }
+    .about-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--primary-gradient); }
+    .about-card h3 { font-size: 1.5rem; margin-top: 0; color: #60A5FA; }
 
-    .about-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--primary-gradient);
+    .section-header { margin-bottom: 2.5rem; }
+    .section-header h2 { font-size: 2rem; font-weight: 800; margin: 0 0 0.5rem 0; letter-spacing: -0.5px; }
+    .section-header p { color: var(--text-muted); margin: 0; font-size: 1.05rem; }
+
+    .conditions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .condition-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.8rem; transition: all 0.2s ease; }
+    .condition-card:hover { border-color: var(--border-highlight); background: var(--bg-card-hover); transform: translateY(-3px); }
+    .condition-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
+    .condition-icon { font-size: 1.8rem; background: rgba(255, 255, 255, 0.05); padding: 0.5rem; border-radius: 10px; line-height: 1; }
+    .condition-card h3 { margin: 0; font-size: 1.3rem; font-weight: 700; color: #F8FAFC; }
+    .condition-card ul { margin: 0; padding-left: 1.2rem; color: var(--text-muted); }
+    .condition-card li { margin-bottom: 0.4rem; }
+
+    /* Slider / Slajder Opinii */
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 1rem 0;
     }
 
-    .about-card h3 {
-      font-size: 1.5rem;
-      margin-top: 0;
-      color: #60A5FA;
-    }
-
-    /* Conditions Grid */
-    .conditions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .condition-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 1.8rem;
-      transition: all 0.2s ease;
-    }
-
-    .condition-card:hover {
-      border-color: var(--border-highlight);
-      background: var(--bg-card-hover);
-      transform: translateY(-3px);
-    }
-
-    .condition-header {
+    .slider-track {
       display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .condition-icon {
-      font-size: 1.8rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.5rem;
-      border-radius: 10px;
-      line-height: 1;
-    }
-
-    .condition-card h3 {
-      margin: 0;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #F8FAFC;
-    }
-
-    .condition-card ul {
-      margin: 0;
-      padding-left: 1.2rem;
-      color: var(--text-muted);
-    }
-
-    .condition-card li {
-      margin-bottom: 0.4rem;
-    }
-
-    /* Reviews Section Grid */
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      width: max-content;
+      animation: scroll 35s linear infinite;
+    }
+
+    .slider-wrapper:hover .slider-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .review-card {
+      width: 320px;
+      flex-shrink: 0;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
@@ -255,71 +179,28 @@
       flex-direction: column;
       justify-content: space-between;
     }
+    .stars { color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.8rem; }
+    .review-text { color: #CBD5E1; font-style: italic; font-size: 0.98rem; margin-bottom: 1.2rem; }
+    .review-author { font-weight: 700; color: #60A5FA; font-size: 0.9rem; }
+    .review-tag { font-size: 0.8rem; color: var(--text-muted); }
 
-    .stars {
-      color: var(--accent-gold);
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .review-text {
-      color: #CBD5E1;
-      font-style: italic;
-      font-size: 0.98rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .review-author {
-      font-weight: 700;
-      color: #60A5FA;
-      font-size: 0.9rem;
-    }
-
-    .review-tag {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border-color);
-      background: #090D16;
-      padding: 2.5rem 2rem;
-      margin-top: 5rem;
-    }
-
-    .footer-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .footer-logo img {
-      max-height: 50px;
-      width: auto;
-      filter: brightness(0) invert(1); /* Zapewnia widoczność logo na ciemnym tle */
-      opacity: 0.9;
-    }
+    footer { border-top: 1px solid var(--border-color); background: #090D16; padding: 2.5rem 2rem; margin-top: 5rem; }
+    .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo img { max-height: 50px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <a href="index.html" class="brand-logo">FIZJORADA</a>
     <nav>
       <a href="index.html" class="active">Strona Główna</a>
       <a href="cennik.html">Cennik i Usługi</a>
       <a href="wideo.html">Materiały Wideo</a>
-      <a href="kontakt.html">Kontakt i Opinie</a>
+      <a href="kontakt.html">Kontakt</a>
     </nav>
   </header>
 
-  <!-- Hero -->
   <div class="hero">
     <div class="badge">Mobilna Fizjoterapia Wrocław</div>
     <h1>Zapomnij o bólu.<br>Terapia w Twoim salonie.</h1>
@@ -331,7 +212,6 @@
 
   <div class="container">
 
-    <!-- Sekcja O Mnie -->
     <section>
       <div class="about-card">
         <h3>Poznajmy się</h3>
@@ -342,7 +222,7 @@
       </div>
     </section>
 
-    <!-- Sekcja Dolegliwości -->
+    <!-- Dolegliwości -->
     <section style="margin-bottom: 5rem;">
       <div class="section-header">
         <h2>Dolegliwości, które leczę</h2>
@@ -350,215 +230,71 @@
       </div>
 
       <div class="conditions-grid">
-
-        <!-- Kręgosłup -->
         <div class="condition-card">
-          <div class="condition-header">
-            <span class="condition-icon">🦴</span>
-            <h3>Kręgosłup</h3>
-          </div>
-          <ul>
-            <li>Rwa kulszowa</li>
-            <li>Mrowienia i drętwienia kończyn</li>
-            <li>Zespół przeciążeniowo-bólowy</li>
-          </ul>
+          <div class="condition-header"><span class="condition-icon">🦴</span><h3>Kręgosłup</h3></div>
+          <ul><li>Rwa kulszowa</li><li>Mrowienia i drętwienia kończyn</li><li>Zespół przeciążeniowo-bólowy</li></ul>
         </div>
-
-        <!-- Kolano -->
         <div class="condition-card">
-          <div class="condition-header">
-            <span class="condition-icon">🦵</span>
-            <h3>Kolano</h3>
-          </div>
-          <ul>
-            <li>Choroba zwyrodnieniowa</li>
-            <li>Stan po endoprotezie</li>
-            <li>Uszkodzenia więzadłowe</li>
-            <li>Uszkodzenia łąkotkowe</li>
-          </ul>
+          <div class="condition-header"><span class="condition-icon">🦵</span><h3>Kolano</h3></div>
+          <ul><li>Choroba zwyrodnieniowa</li><li>Stan po endoprotezie</li><li>Uszkodzenia więzadłowe</li><li>Uszkodzenia łąkotkowe</li></ul>
         </div>
-
-        <!-- Bark -->
         <div class="condition-card">
-          <div class="condition-header">
-            <span class="condition-icon">🦾</span>
-            <h3>Bark</h3>
-          </div>
-          <ul>
-            <li>Uszkodzenie stożka rotatorów</li>
-            <li>Zamrożony bark</li>
-            <li>Zespół cieśni podbarkowej</li>
-            <li>Zapalenie kaletki</li>
-            <li>Urazy sportowe</li>
-          </ul>
+          <div class="condition-header"><span class="condition-icon">🦾</span><h3>Bark</h3></div>
+          <ul><li>Uszkodzenie stożka rotatorów</li><li>Zamrożony bark</li><li>Zespół cieśni podbarkowej</li><li>Zapalenie kaletki</li><li>Urazy sportowe</li></ul>
         </div>
-
-        <!-- Biodro -->
         <div class="condition-card">
-          <div class="condition-header">
-            <span class="condition-icon">🧍</span>
-            <h3>Biodro</h3>
-          </div>
-          <ul>
-            <li>Ból biodra, pachwiny i pośladków</li>
-            <li>Stan po endoprotezie</li>
-          </ul>
+          <div class="condition-header"><span class="condition-icon">🧍</span><h3>Biodro</h3></div>
+          <ul><li>Ból biodra, pachwiny i pośladków</li><li>Stan po endoprotezie</li></ul>
         </div>
-
-        <!-- Stopa -->
         <div class="condition-card">
-          <div class="condition-header">
-            <span class="condition-icon">🦶</span>
-            <h3>Stopa</h3>
-          </div>
-          <ul>
-            <li>Skręcenia i zwichnięcia</li>
-            <li>Zerwania i zapalenia ścięgien</li>
-            <li>Hallux (paluch koślawy)</li>
-            <li>Zaburzenia krążeniowe</li>
-            <li>Zaburzenia łuku stopy</li>
-          </ul>
+          <div class="condition-header"><span class="condition-icon">🦶</span><h3>Stopa</h3></div>
+          <ul><li>Skręcenia i zwichnięcia</li><li>Zerwania i zapalenia ścięgien</li><li>Hallux (paluch koślawy)</li><li>Zaburzenia krążeniowe</li><li>Zaburzenia łuku stopy</li></ul>
         </div>
-
-        <!-- Łokieć i Ręka -->
         <div class="condition-card">
-          <div class="condition-header">
-            <span class="condition-icon">🖐️</span>
-            <h3>Łokieć i Ręka</h3>
-          </div>
-          <ul>
-            <li>Łokieć tenisisty i golfisty</li>
-            <li>Zespół cieśni nadgarstka</li>
-            <li>Urazy sportowe i pooperacyjne</li>
-          </ul>
+          <div class="condition-header"><span class="condition-icon">🖐️</span><h3>Łokieć i Ręka</h3></div>
+          <ul><li>Łokieć tenisisty i golfisty</li><li>Zespół cieśni nadgarstka</li><li>Urazy sportowe i pooperacyjne</li></ul>
         </div>
-
-        <!-- Głowa -->
         <div class="condition-card">
-          <div class="condition-header">
-            <span class="condition-icon">🧠</span>
-            <h3>Głowa / Twarz</h3>
-          </div>
-          <ul>
-            <li>Mrowienia i drętwienia twarzy</li>
-            <li>Napięciowe bóle głowy</li>
-          </ul>
+          <div class="condition-header"><span class="condition-icon">🧠</span><h3>Głowa / Twarz</h3></div>
+          <ul><li>Mrowienia i drętwienia twarzy</li><li>Napięciowe bóle głowy</li></ul>
         </div>
-
       </div>
     </section>
 
-    <!-- Sekcja Opinie (8 Recenzji) -->
+    <!-- Opinie - Przesuwający się Slajder -->
     <section>
       <div class="section-header">
         <h2>Co mówią moi pacjenci</h2>
-        <p>Opinie osób, które odzyskały sprawność i komfort bez wychodzenia z domu</p>
+        <p>Opinie osób, które odzyskały sprawność (najedź myszką, aby zatrzymać slajder)</p>
       </div>
 
-      <div class="reviews-grid">
+      <div class="slider-wrapper">
+        <div class="slider-track">
+          <!-- Zestaw 1 -->
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Zgłosiłam się z mocnym bólem lędźwi. Rad połączył świetny masaż z naukowym podejściem do ćwiczeń. Ból całkowicie ustąpił po 2 wizytach!”</div></div><div><div class="review-author">Marta S.</div><div class="review-tag">Wrocław – Krzyki</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Mobilny stół, pełen profesjonalizm i niesamowita oszczędność czasu. Rad rozbił mi spięty kark i barki od pracy przy komputerze.”</div></div><div><div class="review-author">Piotr K.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Trening medyczny z Radem to zupełnie inny poziom. Po uszkodzeniu łąkotki bałem się wrócić do biegania. Dziś znów robię dyszki bez bólu.”</div></div><div><div class="review-author">Krzysztof M.</div><div class="review-tag">Pacjent indywidualny</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Skorzystałam ze stawki sąsiedzkiej na Jagodnie. Rewelacyjne połączenie masażu tkanek głębokich i ćwiczeń. Gorąco polecam!”</div></div><div><div class="review-author">Karolina W.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Miałem spore obawy co do rwy kulszowej, ale Rad dokładnie zdiagnozował problem i od pierwszej wizyty poczułem ogromną ulgę.”</div></div><div><div class="review-author">Tomasz R.</div><div class="review-tag">Wrocław – Fabryczna</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Super podejście do pacjenta! Trening indywidualny w salonie sprawił, że przestałam bać się ruchu po urazie kolana.”</div></div><div><div class="review-author">Ania G.</div><div class="review-tag">Wrocław – Krzyki</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Prawdziwy fachowiec z ogromną wiedzą. Świetnie wytłumaczył mi, skąd bierze się drętwienie w ręce i podał proste ćwiczenia na co dzień.”</div></div><div><div class="review-author">Michał B.</div><div class="review-tag">Wrocław – Psie Pole</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Kupiłam pakiet 8 treningów i była to najlepsza decyzja dla mojego kręgosłupa. Ból zniknął, a ja nauczyłam się prawidłowo ćwiczyć.”</div></div><div><div class="review-author">Dorota P.</div><div class="review-tag">Pakiet Treningowy</div></div></div>
 
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Zgłosiłam się z mocnym bólem lędźwi. Rad połączył świetny masaż z naukowym podejściem do ćwiczeń. Ból całkowicie ustąpił po 2 wizytach!”</div>
-          </div>
-          <div>
-            <div class="review-author">Marta S.</div>
-            <div class="review-tag">Wrocław – Krzyki</div>
-          </div>
+          <!-- Duplikaty dla efektywniej pętli CSS -->
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Zgłosiłam się z mocnym bólem lędźwi. Rad połączył świetny masaż z naukowym podejściem do ćwiczeń. Ból całkowicie ustąpił po 2 wizytach!”</div></div><div><div class="review-author">Marta S.</div><div class="review-tag">Wrocław – Krzyki</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Mobilny stół, pełen profesjonalizm i niesamowita oszczędność czasu. Rad rozbił mi spięty kark i barki od pracy przy komputerze.”</div></div><div><div class="review-author">Piotr K.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Trening medyczny z Radem to zupełnie inny poziom. Po uszkodzeniu łąkotki bałem się wrócić do biegania. Dziś znów robię dyszki bez bólu.”</div></div><div><div class="review-author">Krzysztof M.</div><div class="review-tag">Pacjent indywidualny</div></div></div>
+          <div class="review-card"><div><div class="stars">★★★★★</div><div class="review-text">„Skorzystałam ze stawki sąsiedzkiej na Jagodnie. Rewelacyjne połączenie masażu tkanek głębokich i ćwiczeń. Gorąco polecam!”</div></div><div><div class="review-author">Karolina W.</div><div class="review-tag">Wrocław – Jagodno</div></div></div>
         </div>
-
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Mobilny stół, pełen profesjonalizm i niesamowita oszczędność czasu. Rad rozbił mi spięty kark i barki od pracy przy komputerze.”</div>
-          </div>
-          <div>
-            <div class="review-author">Piotr K.</div>
-            <div class="review-tag">Wrocław – Jagodno</div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Trening medyczny z Radem to zupełnie inny poziom. Po uszkodzeniu łąkotki bałem się wrócić do biegania. Dziś znów robię dyszki bez bólu.”</div>
-          </div>
-          <div>
-            <div class="review-author">Krzysztof M.</div>
-            <div class="review-tag">Pacjent indywidualny</div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Skorzystałam ze stawki sąsiedzkiej na Jagodnie. Rewelacyjne połączenie masażu tkanek głębokich i ćwiczeń. Gorąco polecam!”</div>
-          </div>
-          <div>
-            <div class="review-author">Karolina W.</div>
-            <div class="review-tag">Wrocław – Jagodno</div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Miałem spore obawy co do rwy kulszowej, ale Rad dokładnie zdiagnozował problem i od pierwszej wizyty poczułem ogromną ulgę.”</div>
-          </div>
-          <div>
-            <div class="review-author">Tomasz R.</div>
-            <div class="review-tag">Wrocław – Fabryczna</div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Super podejście do pacjenta! Trening indywidualny w salonie sprawił, że przestałam bać się ruchu po urazie kolana.”</div>
-          </div>
-          <div>
-            <div class="review-author">Ania G.</div>
-            <div class="review-tag">Wrocław – Krzyki</div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Prawdziwy fachowiec z ogromną wiedzą. Świetnie wytłumaczył mi, skąd bierze się drętwienie w ręce i podał proste ćwiczenia do wykonywania na co dzień.”</div>
-          </div>
-          <div>
-            <div class="review-author">Michał B.</div>
-            <div class="review-tag">Wrocław – Psie Pole</div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="review-text">„Kupiłam pakiet 8 treningów i była to najlepsza decyzja dla mojego kręgosłupa. Ból zniknął, a ja nauczyłam się prawidłowo ćwiczyć.”</div>
-          </div>
-          <div>
-            <div class="review-author">Dorota P.</div>
-            <div class="review-tag">Pakiet Treningowy</div>
-          </div>
-        </div>
-
       </div>
     </section>
 
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div style="color: var(--text-muted); font-size: 0.9rem;">
-        &copy; 2026 Fizjorada – Rad Bahar. Wszelkie prawa zastrzeżone.
-      </div>
-      <div class="footer-logo">
-        <img src="logo.png" alt="Fizjorada Logo" onerror="this.style.display='none';">
-      </div>
+      <div style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Fizjorada – Rad Bahar. Wszelkie prawa zastrzeżone.</div>
+      <div class="footer-logo"><img src="logo.png" alt="Fizjorada Logo" onerror="this.style.display='none';"></div>
     </div>
   </footer>
 
