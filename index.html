@@ -1,130 +1,354 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabinet Fizjoterapii | mgr Jan Kowalski</title>
-    <meta name="description" content="Skuteczna fizjoterapia i rehabilitacja w [Twoje Miasto]. Umów wizytę online!">
-    <style>
-        :root {
-            --primary-color: #0e8388;
-            --secondary-color: #2e4f4f;
-            --light-bg: #f8f9fa;
-            --text-color: #333;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { color: var(--text-color); line-height: 1.6; }
-        
-        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 1rem; }
-        .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary-color); }
-        .nav-links { display: flex; list-style: none; gap: 1.5rem; }
-        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
-        
-        .hero { background: linear-gradient(rgba(14,131,136,0.85), rgba(46,79,79,0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80') center/cover; color: white; padding: 4rem 1rem; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; background: #fff; color: var(--primary-color); padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 1rem; transition: background 0.3s; }
-        .btn:hover { background: var(--light-bg); }
-        
-        .container { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
-        .section-title { text-align: center; margin-bottom: 2rem; color: var(--secondary-color); }
-        
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--light-bg); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-color); }
-        
-        .pricing-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        .pricing-table th, .pricing-table td { padding: 0.75rem; border-bottom: 1px solid #ddd; text-align: left; }
-        .pricing-table th { background: var(--light-bg); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fizjorada – Rad Bahar | Mobilna Fizjoterapia Wrocław</title>
+  <style>
+    :root {
+      --primary: #1A365D;
+      --accent: #2B6CB0;
+      --highlight: #D69E2E;
+      --bg-light: #F7FAFC;
+      --text: #2D3748;
+    }
 
-        footer { background: var(--secondary-color); color: white; text-align: center; padding: 2rem 1rem; margin-top: 2rem; }
-        
-        @media (max-width: 768px) {
-            .nav-links { display: none; } /* Uproszczenie pod mobile */
-            .hero h1 { font-size: 1.8rem; }
-        }
-    </style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-container img {
+      max-height: 50px;
+      width: auto;
+    }
+
+    .logo-fallback {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem 0;
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 3px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Stawka Sąsiedzka - Boks Promocyjny */
+    .promo-box {
+      background-color: #FEFCBF;
+      border-left: 6px solid var(--highlight);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .promo-box h3 {
+      margin-top: 0;
+      color: #744210;
+    }
+
+    /* Tabela / Kafelki Cennika */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .price-card {
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: var(--bg-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .price-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .price-card .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+      margin: 0.5rem 0;
+    }
+
+    .travel-rates {
+      background: #EDF2F7;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+
+    /* Sekcja Opinie */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: var(--bg-light);
+      border-left: 4px solid var(--accent);
+      padding: 1.2rem;
+      border-radius: 4px;
+      font-style: italic;
+    }
+
+    .review-card .author {
+      margin-top: 0.8rem;
+      font-weight: bold;
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    /* Sekcja Video */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .video-card iframe, .video-card video {
+      width: 100%;
+      height: 250px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    /* Sekcja Kontakt */
+    .contact-info {
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">FizjoMed Jan Kowalski</div>
-            <ul class="nav-links">
-                <li><a href="#uslugi">Usługi</a></li>
-                <li><a href="#cennik">Cennik</a></li>
-                <li><a href="#o-mnie">O mnie</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Nagłówek i Logo -->
+  <header>
+    <div class="logo-container">
+      <!-- Wstaw tu plik swojego logo (np. logo.png) -->
+      <img src="logo.png" alt="Fizjorada Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <div class="logo-fallback" style="display:none;">Fizjorada</div>
+    </div>
+    <nav>
+      <a href="#o-mnie">O mnie</a>
+      <a href="#cennik">Cennik</a>
+      <a href="#wideo">Wideo</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <h1>Skuteczna Fizjoterapia i Rehabilitacja</h1>
-        <p>Pozbądź się bólu i wróć do pełnej sprawności pod opieką dyplomowanego fizjoterapeuty.</p>
-        <a href="#rezerwacja" class="btn">Umów wizytę online</a>
+  <!-- Sekcja Główna (Hero) -->
+  <div class="hero">
+    <h1>Mobilna Fizjoterapia Wrocław</h1>
+    <p>Profesjonalna pomoc fizjoterapeutyczna w Twoim domu. Bez wychodzenia z salonu, bez stania w korkach.</p>
+    <a href="tel:+48537843652" style="background: var(--highlight); color: #000; padding: 0.8rem 1.8rem; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;">Zadzwoń: 537 843 652</a>
+  </div>
+
+  <div class="container">
+
+    <!-- Sekcja O Mnie -->
+    <section id="o-mnie">
+      <h2>O mnie</h2>
+      <p>Nazywam się <strong>Rad Bahar</strong>.</p>
+      <p>Postanowiłem ułatwić życie mieszkańcom Wrocławia i ruszyłem z projektem <strong>Mobilna Fizjoterapia</strong>. Zamiast tracić cenny czas na dojazdy do przychodni i stanie w korkach, możecie otrzymać pełnowartościową, profesjonalną pomoc bezpośrednio u siebie w salonie.</p>
+      <p>Pomagam skutecznie pozbyć się bólu, łącząc <strong>masaż terapeutyczny z indywidualnym treningiem medycznym</strong>. Moim celem nie jest jedynie chwilowa ulga, ale wyeliminowanie przyczyny problemu tak, aby ból nie wracał.</p>
     </section>
 
-    <div class="container" id="uslugi">
-        <h2 class="section-title">W czym mogę Ci pomóc?</h2>
-        <div class="services-grid">
-            <div class="card">
-                <h3>Fizjoterapia Ortopedyczna</h3>
-                <p>Rehabilitacja po urazach, skręceniach, złamaniach oraz operacjach stawów.</p>
-            </div>
-            <div class="card">
-                <h3>Terapia Bólu Kręgosłupa</h3>
-                <p>Dedykowana osobom z pracą siedzącą, rwą kulszową i zmianami zwyrodnieniowymi.</p>
-            </div>
-            <div class="card">
-                <h3>Masaż Tkanek Głęboki</h3>
-                <p>Praca z napięciem mięśniowym i powięziowym w celu przewlekłego rozluźnienia.</p>
-            </div>
+    <!-- Cennik i Promocja Sąsiedzka -->
+    <section id="cennik">
+      <h2>Cennik Usług</h2>
+
+      <!-- Boks: Stawka Sąsiedzka -->
+      <div class="promo-box">
+        <h3>📍 Stawka Sąsiedzka dla Mieszkańców Jagodna i Krzyków!</h3>
+        <p>Mieszkasz na Jagodnie lub Krzykach? Skorzystaj ze specjalnej oferty sąsiedzkiej:</p>
+        <ul>
+          <li><strong>Wszystkie usługi:</strong> stała cena <strong>180 zł</strong></li>
+          <li><strong>Dojazd:</strong> ZAWSZE GRATIS!</li>
+        </ul>
+      </div>
+
+      <!-- Kafelki Usług Standardowych -->
+      <div class="price-grid">
+        <div class="price-card">
+          <div>
+            <h3>Konsultacja + Terapia</h3>
+            <p>Diagnostyka funkcjonalna i pierwsza pomoc w bólu.</p>
+          </div>
+          <div class="price">250 zł</div>
         </div>
-    </div>
 
-    <div class="container" id="cennik">
-        <h2 class="section-title">Cennik usług</h2>
-        <table class="pricing-table">
-            <thead>
-                <tr>
-                    <th>Usługa</th>
-                    <th>Czas trwania</th>
-                    <th>Cena</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Pierwsza konsultacja z badaniem + Terapia</td>
-                    <td>60 min</td>
-                    <td>200 zł</td>
-                </tr>
-                <tr>
-                    <td>Kolejna wizyta fizjoterapeutyczna</td>
-                    <td>45 min</td>
-                    <td>160 zł</td>
-                </tr>
-                <tr>
-                    <td>Masaż terapeutyczny / głęboki</td>
-                    <td>50 min</td>
-                    <td>180 zł</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="container" id="rezerwacja">
-        <h2 class="section-title">Zarezerwuj wizytę</h2>
-        <p style="text-align: center;">Wybierz dogodny termin w poniższym kalendarzu:</p>
-        <!-- Przykład osadzenia widgetu Calendly / ZnanyLekarz -->
-        <div style="margin-top: 1.5rem; text-align: center;">
-            <iframe src="https://calendly.com/TWOJ-NICK/30min" width="100%" height="600" frameborder="0"></iframe>
+        <div class="price-card">
+          <div>
+            <h3>Masaż Terapeutyczny</h3>
+            <p>Głębokie rozluźnienie tkanek i mięśni (60 min).</p>
+          </div>
+          <div class="price">200 zł</div>
         </div>
-    </div>
 
-    <footer>
-        <p>Gabinet Fizjoterapii mgr Jan Kowalski | ul. Prosta 12, Warszawa | Tel: +48 123 456 789</p>
-        <p><small>&copy; 2026 Wszelkie prawa zastrzeżone.</small></p>
-    </footer>
+        <div class="price-card">
+          <div>
+            <h3>Trening Medyczny</h3>
+            <p>Indywidualny trening eliminujący przyczynę bólu.</p>
+          </div>
+          <div class="price">180 zł</div>
+        </div>
+
+        <div class="price-card" style="border: 2px solid var(--accent);">
+          <div>
+            <span style="background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">POLECANY</span>
+            <h3>Pakiet 8 Treningów</h3>
+            <p>Stała współpraca, profilaktyka i sprawność. <strong>Oszczędzasz 160 zł!</strong></p>
+          </div>
+          <div class="price">1280 zł</div>
+        </div>
+      </div>
+
+      <!-- Opłaty za Dojazd poza Wrocław -->
+      <div class="travel-rates">
+        <h3>🚗 Dojazd poza Wrocławiem</h3>
+        <p>Usługi realizuję mobilnie z dojazdem na terenie całego Wrocławia. Dla lokalizacji poza granicami miasta obowiązuje dopłata dojazdowa:</p>
+        <ul>
+          <li>0 – 5 km: <strong>+30 zł</strong></li>
+          <li>5 – 10 km: <strong>+40 zł</strong></li>
+          <li>Powyżej 10 km: <strong>+50 zł</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Sekcja Wideo / Ćwiczenia -->
+    <section id="wideo">
+      <h2>Materiały Wideo</h2>
+      <p>Zobacz, jak wyglądają ćwiczenia oraz wskazówki, które udostępniam na moich profilach społecznościowych:</p>
+      
+      <div class="video-grid">
+        <!-- Przykładowe miejsce na filmik / rolkę z IG / YouTube -->
+        <div class="video-card">
+          <!-- Zamień 'link_do_filmiku' na właściwy adres lub wstaw filmik z YouTube/IG -->
+          <p style="text-align: center; padding: 3rem; background: #EDF2F7; border-radius: 8px;">
+            🎬 <strong>Obserwuj mnie na Instagramie i TikToku</strong>,<br>aby być na bieżąco z poradami dotyczącymi zdrowego kręgosłupa!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Opinie -->
+    <section id="opinie">
+      <h2>Co mówią pacjenci (Opinie)</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p>„Zgłosiłam się z nawracającym bólem lędźwi. Podoba mi się, że Rad połączył masaż z naukowym podejściem do ćwiczeń. Ból minął po 2 wizytach!”</p>
+          <div class="author">– Marta S.</div>
+        </div>
+        <div class="review-card">
+          <p>„Opja mobilna to dla mnie zbawienie – oszczędzam mnóstwo czasu na dojazdach. Pełen profesjonalizm i świetny stół do masażu przywieziony prosto do domu.”</p>
+          <div class="author">– Piotr K.</div>
+        </div>
+        <div class="review-card">
+          <p>„Trening medyczny dopasowany idealnie do moich ograniczeń. Po pakiecie 8 treningów czuję się silniejsza i znowu mogę biegać bez bólu.”</p>
+          <div class="author">– Anna M.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja Kontakt -->
+    <section id="kontakt">
+      <h2>Kontakt i Rezerwacja Wizyt</h2>
+      <div class="contact-info">
+        <p>📞 <strong>Telefon:</strong> <a href="tel:+48537843652">537 843 652</a></p>
+        <p>✉️ <strong>E-mail:</strong> <a href="mailto:kontakt@fizjorada.pl">kontakt@fizjorada.pl</a></p>
+        <p>🌐 <strong>Social Media:</strong> 
+          <a href="https://facebook.com/fizjorada" target="_blank">Facebook (fizjorada)</a> | 
+          <a href="https://instagram.com/fizjorada" target="_blank">Instagram (@fizjorada)</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Fizjorada – Rad Bahar. Wszelkie prawa zastrzeżone.</p>
+  </footer>
 
 </body>
 </html>
