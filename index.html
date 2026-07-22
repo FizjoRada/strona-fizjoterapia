@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinet Fizjoterapii | mgr Jan Kowalski</title>
+    <meta name="description" content="Skuteczna fizjoterapia i rehabilitacja w [Twoje Miasto]. Umów wizytę online!">
+    <style>
+        :root {
+            --primary-color: #0e8388;
+            --secondary-color: #2e4f4f;
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { color: var(--text-color); line-height: 1.6; }
+        
+        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 1rem; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary-color); }
+        .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
+        
+        .hero { background: linear-gradient(rgba(14,131,136,0.85), rgba(46,79,79,0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80') center/cover; color: white; padding: 4rem 1rem; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .btn { display: inline-block; background: #fff; color: var(--primary-color); padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 1rem; transition: background 0.3s; }
+        .btn:hover { background: var(--light-bg); }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
+        .section-title { text-align: center; margin-bottom: 2rem; color: var(--secondary-color); }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--light-bg); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-color); }
+        
+        .pricing-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .pricing-table th, .pricing-table td { padding: 0.75rem; border-bottom: 1px solid #ddd; text-align: left; }
+        .pricing-table th { background: var(--light-bg); }
+
+        footer { background: var(--secondary-color); color: white; text-align: center; padding: 2rem 1rem; margin-top: 2rem; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Uproszczenie pod mobile */
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">FizjoMed Jan Kowalski</div>
+            <ul class="nav-links">
+                <li><a href="#uslugi">Usługi</a></li>
+                <li><a href="#cennik">Cennik</a></li>
+                <li><a href="#o-mnie">O mnie</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Skuteczna Fizjoterapia i Rehabilitacja</h1>
+        <p>Pozbądź się bólu i wróć do pełnej sprawności pod opieką dyplomowanego fizjoterapeuty.</p>
+        <a href="#rezerwacja" class="btn">Umów wizytę online</a>
+    </section>
+
+    <div class="container" id="uslugi">
+        <h2 class="section-title">W czym mogę Ci pomóc?</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3>Fizjoterapia Ortopedyczna</h3>
+                <p>Rehabilitacja po urazach, skręceniach, złamaniach oraz operacjach stawów.</p>
+            </div>
+            <div class="card">
+                <h3>Terapia Bólu Kręgosłupa</h3>
+                <p>Dedykowana osobom z pracą siedzącą, rwą kulszową i zmianami zwyrodnieniowymi.</p>
+            </div>
+            <div class="card">
+                <h3>Masaż Tkanek Głęboki</h3>
+                <p>Praca z napięciem mięśniowym i powięziowym w celu przewlekłego rozluźnienia.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="cennik">
+        <h2 class="section-title">Cennik usług</h2>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Usługa</th>
+                    <th>Czas trwania</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pierwsza konsultacja z badaniem + Terapia</td>
+                    <td>60 min</td>
+                    <td>200 zł</td>
+                </tr>
+                <tr>
+                    <td>Kolejna wizyta fizjoterapeutyczna</td>
+                    <td>45 min</td>
+                    <td>160 zł</td>
+                </tr>
+                <tr>
+                    <td>Masaż terapeutyczny / głęboki</td>
+                    <td>50 min</td>
+                    <td>180 zł</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container" id="rezerwacja">
+        <h2 class="section-title">Zarezerwuj wizytę</h2>
+        <p style="text-align: center;">Wybierz dogodny termin w poniższym kalendarzu:</p>
+        <!-- Przykład osadzenia widgetu Calendly / ZnanyLekarz -->
+        <div style="margin-top: 1.5rem; text-align: center;">
+            <iframe src="https://calendly.com/TWOJ-NICK/30min" width="100%" height="600" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>Gabinet Fizjoterapii mgr Jan Kowalski | ul. Prosta 12, Warszawa | Tel: +48 123 456 789</p>
+        <p><small>&copy; 2026 Wszelkie prawa zastrzeżone.</small></p>
+    </footer>
+
+</body>
+</html>
