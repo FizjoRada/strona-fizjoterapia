@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wideo – Fizjorada Wrocław</title>
+  <style>
+    :root { --primary: #1A365D; --accent: #2B6CB0; --bg-light: #F7FAFC; --text: #2D3748; }
+    body { font-family: system-ui, sans-serif; line-height: 1.6; color: var(--text); margin: 0; }
+    header { background: #fff; border-bottom: 2px solid #E2E8F0; padding: 1.5rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .logo-container img { max-height: 120px; width: auto; }
+    nav { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    nav a { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 1.1rem; padding: 0.5rem 1rem; }
+    nav a.active { background-color: var(--bg-light); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }
+    h2 { color: var(--primary); border-bottom: 3px solid var(--accent); display: inline-block; }
+    .social-btn { display: inline-block; background: var(--accent); color: white; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 0.5rem; }
+    footer { background: var(--primary); color: white; text-align: center; padding: 1.5rem; margin-top: 4rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container"><img src="logo.png" alt="Fizjorada Logo"></div>
+    <nav>
+      <a href="index.html">Strona Główna</a>
+      <a href="cennik.html">Cennik i Usługi</a>
+      <a href="wideo.html" class="active">Materiały Wideo</a>
+      <a href="kontakt.html">Kontakt i Opinie</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Materiały Wideo</h2>
+    <p>Zobacz moje poradniki oraz ćwiczenia, które publikuję w mediach społecznościowych:</p>
+    <div style="margin-top: 2rem;">
+      <a href="https://instagram.com/fizjorada" target="_blank" class="social-btn">Zobacz Rolki na Instagramie</a>
+      <a href="https://facebook.com/fizjorada" target="_blank" class="social-btn">Zobacz Filmy na Facebooku</a>
+    </div>
+  </div>
+
+  <footer><p>&copy; 2026 Fizjorada – Rad Bahar</p></footer>
+</body>
+</html>
