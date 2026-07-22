@@ -56,10 +56,9 @@
     }
 
     .brand-logo-img {
-      height: 48px;
+      height: 45px;
       width: auto;
       object-fit: contain;
-      border-radius: 6px;
     }
 
     .brand-title {
@@ -133,6 +132,7 @@
 
     .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
 
+    /* Sekcja O mnie ze zdjęciem */
     .about-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -141,9 +141,25 @@
       margin-bottom: 4rem;
       position: relative;
       overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      align-items: center;
     }
     .about-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--primary-gradient); }
     .about-card h3 { font-size: 1.5rem; margin-top: 0; color: #60A5FA; }
+    .about-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      .about-card { grid-template-columns: 1fr; }
+      .about-img { height: 200px; }
+    }
 
     .section-header { margin-bottom: 2.5rem; }
     .section-header h2 { font-size: 2rem; font-weight: 800; margin: 0 0 0.5rem 0; letter-spacing: -0.5px; }
@@ -158,6 +174,41 @@
     .condition-card ul { margin: 0; padding-left: 1.2rem; color: var(--text-muted); }
     .condition-card li { margin-bottom: 0.4rem; }
 
+    /* Galeria / Baner wizualny */
+    .photo-banner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 4rem 0;
+    }
+    .photo-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 220px;
+      border: 1px solid var(--border-color);
+    }
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .photo-item:hover img {
+      transform: scale(1.05);
+    }
+    .photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #F8FAFC;
+    }
+
     /* Google Rating Badge */
     .google-badge {
       display: inline-flex;
@@ -171,7 +222,7 @@
       font-size: 0.95rem;
     }
 
-    /* Slider / Slajder Opinii */
+    /* Slider Opinii */
     .slider-wrapper {
       position: relative;
       width: 100%;
@@ -217,10 +268,10 @@
 </head>
 <body>
 
-  <!-- Header z Logo w lewym górnym rogu -->
+  <!-- Header -->
   <header>
     <a href="index.html" class="brand-container">
-      <img src="logo(1).png" alt="Fizjorada Logo" class="brand-logo-img" onerror="this.style.display='none';">
+      <img src="logo.png" alt="Logo" class="brand-logo-img" onerror="this.style.display='none';">
       <span class="brand-title">FIZJORADA</span>
     </a>
     <nav>
@@ -243,14 +294,37 @@
 
   <div class="container">
 
-    <!-- O Mnie -->
+    <!-- O Mnie ze zdjęciem -->
     <section>
       <div class="about-card">
-        <h3>Poznajmy się</h3>
-        <p style="font-size: 1.1rem; color: #E2E8F0; margin-bottom: 1rem;">Nazywam się <strong>Rad Bahar</strong>.</p>
-        <p style="color: var(--text-muted); margin: 0;">
-          Postanowiłem ułatwić życie mieszkańcom Wrocławia i ruszyłem z Mobilną Fizjoterapią. Zamiast tracić czas w korkach i stać w kolejce do przychodni, możecie otrzymać profesjonalną pomoc bezpośrednio w zaciszu własnego domu. Pomagam skutecznie pozbyć się bólu łącząc masaż z treningiem indywidualnym tak, aby problem nie wracał.
-        </p>
+        <div>
+          <h3>Poznajmy się</h3>
+          <p style="font-size: 1.1rem; color: #E2E8F0; margin-bottom: 1rem;">Nazywam się <strong>Rad Bahar</strong>.</p>
+          <p style="color: var(--text-muted); margin: 0;">
+            Postanowiłem ułatwić życie mieszkańcom Wrocławia i ruszyłem z Mobilną Fizjoterapią. Zamiast tracić czas w korkach i stać w kolejce do przychodni, możecie otrzymać profesjonalną pomoc bezpośrednio w zaciszu własnego domu. Pomagam skutecznie pozbyć się bólu łącząc masaż z treningiem indywidualnym tak, aby problem nie wracał.
+          </p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Fizjoterapia" class="about-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Baner ze zdjęciami zabiegów / aktywności -->
+    <section>
+      <div class="photo-banner">
+        <div class="photo-item">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Terapia manualna">
+          <div class="photo-overlay">Terapia Manualna & Masaż</div>
+        </div>
+        <div class="photo-item">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Trening medyczny">
+          <div class="photo-overlay">Trening Medyczny</div>
+        </div>
+        <div class="photo-item">
+          <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80" alt="Rehabilitacja z dojazdem">
+          <div class="photo-overlay">Komfort w Twoim Domu</div>
+        </div>
       </div>
     </section>
 
@@ -293,7 +367,7 @@
       </div>
     </section>
 
-    <!-- Opinie z Google Maps w Slajderze -->
+    <!-- Opinie z Google Maps -->
     <section>
       <div class="section-header">
         <h2>Opinie moich pacjentów</h2>
@@ -306,7 +380,6 @@
       <div class="slider-wrapper">
         <div class="slider-track">
 
-          <!-- Opinia 1 -->
           <div class="review-card">
             <div>
               <div class="stars">★★★★★</div>
@@ -318,7 +391,6 @@
             </div>
           </div>
 
-          <!-- Opinia 2 -->
           <div class="review-card">
             <div>
               <div class="stars">★★★★★</div>
@@ -330,7 +402,6 @@
             </div>
           </div>
 
-          <!-- Opinia 3 -->
           <div class="review-card">
             <div>
               <div class="stars">★★★★★</div>
@@ -342,7 +413,6 @@
             </div>
           </div>
 
-          <!-- Opinia 4 -->
           <div class="review-card">
             <div>
               <div class="stars">★★★★★</div>
@@ -354,7 +424,6 @@
             </div>
           </div>
 
-          <!-- Opinia 5 -->
           <div class="review-card">
             <div>
               <div class="stars">★★★★★</div>
@@ -366,7 +435,7 @@
             </div>
           </div>
 
-          <!-- DUPLIKATY DLA PŁYNNEJ ANIMACJI W CSS -->
+          <!-- Duplikaty dla pętli slidera -->
           <div class="review-card">
             <div>
               <div class="stars">★★★★★</div>
@@ -385,17 +454,6 @@
             </div>
             <div>
               <div class="review-author">Tomasz M.</div>
-              <div class="review-tag">🌐 Opinia z Google Maps</div>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div>
-              <div class="stars">★★★★★</div>
-              <div class="review-text">„Masaż terapeutyczny wykonany po mistrzowsku. Rad dokładnie wie, gdzie przycisnąć, aby puściło nawet największe napięcie w karku. Pełen profesjonalizm.”</div>
-            </div>
-            <div>
-              <div class="review-author">Łukasz B.</div>
               <div class="review-tag">🌐 Opinia z Google Maps</div>
             </div>
           </div>
