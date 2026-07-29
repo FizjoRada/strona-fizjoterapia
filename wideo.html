@@ -19,20 +19,25 @@
     }
 
     :root {
-      --bg-dark: #0F172A;
-      --bg-card: #1E293B;
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8;
-      --primary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-highlight: rgba(59, 130, 246, 0.4);
+      --bg-page: #F8FAFC;             /* Jasne tło główne strony */
+      --bg-card: #FFFFFF;             /* Czysta biel dla kart */
+      --text-main: #0F172A;           /* Ciemny granatowy tekst */
+      --text-muted: #64748B;         /* Szary tekst pomocniczy */
+      --primary: #0D9488;             /* Główne odniesienie do turkusu */
+      --primary-hover: #0F766E;
+      --primary-gradient: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%); /* Elegancki turkus */
+      --accent-bg: #F0FDFA;           /* Jasnoturkusowe tło akcentujące */
+      --border-color: #E2E8F0;        /* Jasne ramki */
+      --border-highlight: rgba(20, 184, 166, 0.4);
+      --shadow-sm: 0 4px 6px -1px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(13, 148, 136, 0.12);
     }
 
     * { box-sizing: border-box; }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-dark);
+      background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.6;
       margin: 0;
@@ -41,7 +46,7 @@
     }
 
     header {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
       padding: 0.5rem 2rem;
@@ -53,6 +58,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      box-shadow: var(--shadow-sm);
     }
 
     .brand-container {
@@ -83,10 +89,13 @@
       border-radius: 8px;
       transition: all 0.2s ease;
     }
-    nav a:hover, nav a.active { color: #fff; background: rgba(255, 255, 255, 0.06); }
+    nav a:hover, nav a.active {
+      color: var(--primary);
+      background: rgba(20, 184, 166, 0.1);
+    }
 
     .container { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; text-align: center; }
-    .section-header h1 { font-size: 2.2rem; font-weight: 800; margin: 0 0 0.5rem 0; letter-spacing: -0.5px; }
+    .section-header h1 { font-size: 2.2rem; font-weight: 800; margin: 0 0 0.5rem 0; letter-spacing: -0.5px; color: var(--text-main); }
     .section-header p { color: var(--text-muted); margin: 0 0 3rem 0; font-size: 1.05rem; }
 
     .video-box {
@@ -96,7 +105,12 @@
       padding: 3.5rem 2rem;
       max-width: 650px;
       margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow-md);
+      transition: border-color 0.2s ease;
+    }
+
+    .video-box:hover {
+      border-color: var(--border-highlight);
     }
 
     .social-btn {
@@ -112,12 +126,12 @@
       font-weight: 700;
       margin: 0.5rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(13, 148, 136, 0.25);
     }
 
     .social-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
     }
 
     .social-btn.fb {
@@ -128,7 +142,12 @@
       box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
     }
 
-    footer { border-top: 1px solid var(--border-color); background: #090D16; padding: 2.5rem 2rem; margin-top: 5rem; }
+    footer {
+      border-top: 1px solid var(--border-color);
+      background: #F1F5F9;
+      padding: 2.5rem 2rem;
+      margin-top: 5rem;
+    }
     .footer-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 
     /* Pływający przycisk Zadzwoń Teraz */
@@ -147,13 +166,13 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 0.95rem;
-      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.45);
+      box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .floating-call-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.65);
+      box-shadow: 0 12px 30px rgba(13, 148, 136, 0.5);
     }
 
     @media (max-width: 768px) {
@@ -204,7 +223,7 @@
 
     <div class="video-box">
       <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎬</div>
-      <h2 style="margin-top: 0; font-size: 1.6rem; font-weight: 700;">Obserwuj profil @fizjorada</h2>
+      <h2 style="margin-top: 0; font-size: 1.6rem; font-weight: 700; color: var(--text-main);">Obserwuj profil @fizjorada</h2>
       <p style="color: var(--text-muted); margin-bottom: 2rem;">Regularnie publikuję rolki pokazujące, jak dbać o kręgosłup i stawy na co dzień. Wybierz swoją ulubioną platformę:</p>
       
       <div>
