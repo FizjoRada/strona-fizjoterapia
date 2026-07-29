@@ -33,16 +33,16 @@
     }
 
     :root {
-      --bg-dark: #0F172A;
-      --bg-card: #1E293B;
-      --bg-card-hover: #334155;
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8;
-      --primary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+      --bg-dark: #F8FAFC;             /* Jasne tło główne strony */
+      --bg-card: #FFFFFF;             /* Czysta biel dla kart */
+      --bg-card-hover: #F0FDFA;       /* Subtelny turkusowy cień po najechaniu */
+      --text-main: #0F172A;           /* Ciemny granatowy tekst (wysoki kontrast) */
+      --text-muted: #64748B;         /* Szary tekst pomocniczy */
+      --primary-gradient: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%); /* Elegancki turkus */
       --accent-cyan: #06B6D4;
-      --accent-gold: #F59E0B;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-highlight: rgba(59, 130, 246, 0.4);
+      --accent-gold: #D97706;         /* Gwiazdki ocen */
+      --border-color: #E2E8F0;        /* Delikatne jasne ramki */
+      --border-highlight: rgba(20, 184, 166, 0.4);
     }
 
     * { box-sizing: border-box; }
@@ -58,7 +58,7 @@
     }
 
     header {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
       padding: 0.5rem 2rem;
@@ -100,23 +100,23 @@
       border-radius: 8px;
       transition: all 0.2s ease;
     }
-    nav a:hover, nav a.active { color: #fff; background: rgba(255, 255, 255, 0.06); }
+    nav a:hover, nav a.active { color: #0D9488; background: rgba(20, 184, 166, 0.1); }
 
     .hero {
       position: relative;
       padding: 5rem 1.5rem 4rem 1.5rem;
       text-align: center;
-      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(20, 184, 166, 0.12) 0%, transparent 70%);
       border-bottom: 1px solid var(--border-color);
     }
 
     .badge {
       display: inline-block;
       padding: 0.4rem 1rem;
-      background: rgba(59, 130, 246, 0.12);
+      background: rgba(20, 184, 166, 0.1);
       border: 1px solid var(--border-highlight);
       border-radius: 50px;
-      color: #60A5FA;
+      color: #0D9488;
       font-size: 0.85rem;
       font-weight: 700;
       margin-bottom: 1.2rem;
@@ -130,6 +130,7 @@
       line-height: 1.15;
       margin: 0 0 1.2rem 0;
       letter-spacing: -1px;
+      color: #0F172A;
     }
 
     .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 2rem auto; }
@@ -145,10 +146,10 @@
       font-weight: 700;
       border-radius: 12px;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 10px 25px rgba(13, 148, 136, 0.3);
       transition: all 0.2s ease;
     }
-    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(37, 99, 235, 0.5); }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(13, 148, 136, 0.45); }
 
     .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
 
@@ -161,12 +162,13 @@
       margin-bottom: 4rem;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
     .about-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--primary-gradient); }
-    .about-card h3 { font-size: 1.5rem; margin-top: 0; color: #60A5FA; }
+    .about-card h3 { font-size: 1.5rem; margin-top: 0; color: #0D9488; }
 
     .section-header { margin-bottom: 2.5rem; }
-    .section-header h2 { font-size: 2rem; font-weight: 800; margin: 0 0 0.5rem 0; letter-spacing: -0.5px; }
+    .section-header h2 { font-size: 2rem; font-weight: 800; margin: 0 0 0.5rem 0; letter-spacing: -0.5px; color: #0F172A; }
     .section-header p { color: var(--text-muted); margin: 0; font-size: 1.05rem; }
 
     .conditions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -179,10 +181,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
     .condition-card:hover { border-color: var(--border-highlight); background: var(--bg-card-hover); transform: translateY(-3px); }
     .condition-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
-    .condition-icon { font-size: 1.8rem; background: rgba(255, 255, 255, 0.05); padding: 0.5rem; border-radius: 10px; line-height: 1; }
+    .condition-icon { font-size: 1.8rem; background: rgba(20, 184, 166, 0.1); padding: 0.5rem; border-radius: 10px; line-height: 1; }
     
     .card-logo-mini {
       height: 28px;
@@ -192,7 +195,7 @@
       object-fit: contain;
     }
 
-    .condition-card h3 { margin: 0; font-size: 1.3rem; font-weight: 700; color: #F8FAFC; }
+    .condition-card h3 { margin: 0; font-size: 1.3rem; font-weight: 700; color: #0F172A; }
     .condition-card ul { margin: 0 0 1.5rem 0; padding-left: 1.2rem; color: var(--text-muted); }
     .condition-card li { margin-bottom: 0.4rem; }
 
@@ -202,9 +205,9 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      background: rgba(59, 130, 246, 0.15);
+      background: rgba(20, 184, 166, 0.1);
       border: 1px solid var(--border-highlight);
-      color: #60A5FA;
+      color: #0D9488;
       padding: 0.6rem 1rem;
       border-radius: 10px;
       text-decoration: none;
@@ -233,6 +236,7 @@
       overflow: hidden;
       height: 220px;
       border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     }
     .photo-item img {
       width: 100%;
@@ -249,10 +253,10 @@
       left: 0;
       right: 0;
       padding: 1rem;
-      background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent);
       font-weight: 700;
       font-size: 0.95rem;
-      color: #F8FAFC;
+      color: #FFFFFF;
     }
 
     /* Google Rating Badge */
@@ -260,12 +264,13 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      background: rgba(255, 255, 255, 0.05);
+      background: #FFFFFF;
       border: 1px solid var(--border-color);
       padding: 0.5rem 1rem;
       border-radius: 10px;
       margin-top: 0.8rem;
       font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     /* Slider Opinii */
@@ -302,13 +307,14 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     }
     .stars { color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.8rem; }
-    .review-text { color: #CBD5E1; font-style: italic; font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.5; }
-    .review-author { font-weight: 700; color: #60A5FA; font-size: 0.9rem; }
+    .review-text { color: #334155; font-style: italic; font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.5; }
+    .review-author { font-weight: 700; color: #0D9488; font-size: 0.9rem; }
     .review-tag { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.3rem; margin-top: 0.2rem; }
 
-    footer { border-top: 1px solid var(--border-color); background: #090D16; padding: 2.5rem 2rem; margin-top: 5rem; }
+    footer { border-top: 1px solid var(--border-color); background: #F1F5F9; padding: 2.5rem 2rem; margin-top: 5rem; }
     .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 
     /* Pływający przycisk Zadzwoń Teraz */
@@ -327,13 +333,13 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 0.95rem;
-      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.45);
+      box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .floating-call-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.65);
+      box-shadow: 0 12px 30px rgba(13, 148, 136, 0.5);
     }
 
     @media (max-width: 768px) {
@@ -384,7 +390,7 @@
     <section>
       <div class="about-card">
         <h3>Poznajmy się</h3>
-        <p style="font-size: 1.1rem; color: #E2E8F0; margin-bottom: 1rem;">Nazywam się <strong>Rad Bahar</strong>.</p>
+        <p style="font-size: 1.1rem; color: #1E293B; margin-bottom: 1rem;">Nazywam się <strong>Rad Bahar</strong>.</p>
         <p style="color: var(--text-muted); margin: 0;">
           Postanowiłem ułatwić życie mieszkańcom Wrocławia i ruszyłem z Mobilną Fizjoterapią. Zamiast tracić czas w korkach i stać w kolejce do przychodni, możecie otrzymać profesjonalną pomoc bezpośrednio w zaciszu własnego domu. Pomagam skutecznie pozbyć się bólu łącząc masaż z treningiem indywidualnym tak, aby problem nie wracał.
         </p>
