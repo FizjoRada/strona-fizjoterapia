@@ -17,16 +17,16 @@
     html { scroll-behavior: smooth; }
 
     :root {
-      --bg-page: #F8FAFC;             /* Jasne tło główne strony */
-      --bg-card: #FFFFFF;             /* Czysta biel dla kart */
-      --bg-card-hover: #F0FDFA;       /* Subtelny turkusowy odcień po najechaniu */
-      --text-main: #0F172A;           /* Ciemny granatowy tekst */
-      --text-muted: #64748B;         /* Szary tekst pomocniczy */
-      --primary: #0D9488;             /* Główne odniesienie do turkusu */
+      --bg-page: #F8FAFC;              /* Jasne tło główne strony */
+      --bg-card: #FFFFFF;              /* Czysta biel dla kart */
+      --bg-card-hover: #F0FDFA;        /* Subtelny turkusowy odcień po najechaniu */
+      --text-main: #0F172A;            /* Ciemny granatowy tekst */
+      --text-muted: #64748B;          /* Szary tekst pomocniczy */
+      --primary: #0D9488;              /* Główne odniesienie do turkusu */
       --primary-hover: #0F766E;
       --primary-gradient: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%); /* Elegancki turkus */
-      --accent-bg: #F0FDFA;           /* Jasnoturkusowe tło akcentujące */
-      --border-color: #E2E8F0;        /* Jasne ramki */
+      --accent-bg: #F0FDFA;            /* Jasnoturkusowe tło akcentujące */
+      --border-color: #E2E8F0;         /* Jasne ramki */
       --border-highlight: rgba(20, 184, 166, 0.4);
       --shadow-sm: 0 4px 6px -1px rgba(15, 23, 42, 0.05);
       --shadow-md: 0 10px 25px -5px rgba(13, 148, 136, 0.15);
@@ -298,8 +298,24 @@
     </div>
 
     <div class="price-grid">
+      <!-- Stawka Sąsiedzka -->
       <div class="price-card featured">
-        <span class="badge">Najczęściej wybierane</span>
+        <span class="badge">Oferta Lokalna</span>
+        <div>
+          <div class="price-title">Stawka Sąsiedzka</div>
+          <div class="price-time">Dla mieszkańców: JAGODNO &amp; KRZYKI</div>
+          <div class="price-amount">180 zł</div>
+          <ul class="price-features">
+            <li>Najlepsza stawka w Twojej okolicy</li>
+            <li>Wszystkie usługi w stałej cenie</li>
+            <li>Dojazd: <strong>Zawsze Gratis!</strong></li>
+            <li>Rehabilitacja, masaż i trening bez wychodzenia z domu</li>
+          </ul>
+        </div>
+        <a href="tel:+48537843652" style="display: block; text-align: center; background: var(--primary-gradient); color: #fff; padding: 0.8rem; border-radius: 12px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);">Zamów wizytę</a>
+      </div>
+
+      <div class="price-card">
         <div>
           <div class="price-title">Fizjoterapia Lecznicza</div>
           <div class="price-time">Czas trwania: ok. 60 minut</div>
@@ -312,7 +328,7 @@
             <li>Instruktaż ćwiczeń domowych</li>
           </ul>
         </div>
-        <a href="tel:+48537843652" style="display: block; text-align: center; background: var(--primary-gradient); color: #fff; padding: 0.8rem; border-radius: 12px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);">Zarezerwuj wizytę</a>
+        <a href="tel:+48537843652" class="btn-secondary">Zarezerwuj wizytę</a>
       </div>
 
       <div class="price-card">
@@ -343,6 +359,35 @@
           </ul>
         </div>
         <a href="tel:+48537843652" class="btn-secondary">Zamów relaks</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <div class="price-title">Trening Medyczny</div>
+          <div class="price-time">Czas trwania: ok. 60 minut</div>
+          <div class="price-amount">180 zł</div>
+          <ul class="price-features">
+            <li>Indywidualny trening eliminujący przyczynę bólu</li>
+            <li>Poprawa wzorców ruchowych i wzmocnienie ciała</li>
+            <li>Dojazd do domu we Wrocławiu</li>
+          </ul>
+        </div>
+        <a href="tel:+48537843652" class="btn-secondary">Zamów trening</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <div class="price-title">Pakiet 8 Treningów</div>
+          <div class="price-time">8 sesji x ok. 60 minut</div>
+          <div class="price-amount">1280 zł</div>
+          <ul class="price-features">
+            <li>Stała współpraca, profilaktyka i sprawność</li>
+            <li>Oszczędzasz 160 zł!</li>
+            <li>Indywidualnie dobrany plan treningowy</li>
+            <li>Dojazd do domu we Wrocławiu</li>
+          </ul>
+        </div>
+        <a href="tel:+48537843652" class="btn-secondary">Zamów pakiet</a>
       </div>
     </div>
 
