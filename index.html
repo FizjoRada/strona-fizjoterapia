@@ -223,40 +223,31 @@
       border-color: transparent;
     }
 
-    /* Baner ze zdjęciami zabiegów */
-    .photo-banner {
+    /* Sekcja wideo z Instagrama */
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 1.5rem;
       margin: 4rem 0;
+      justify-items: center;
     }
-    .photo-item {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      height: 220px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-    }
-    .photo-item img {
+
+    .video-card {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
+      max-width: 350px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      text-align: center;
     }
-    .photo-item:hover img {
-      transform: scale(1.05);
-    }
-    .photo-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1rem;
-      background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent);
+
+    .video-card h3 {
+      font-size: 1.1rem;
       font-weight: 700;
-      font-size: 0.95rem;
-      color: #FFFFFF;
+      color: #0F172A;
+      margin: 0 0 1rem 0;
     }
 
     /* Google Rating Badge */
@@ -397,20 +388,20 @@
       </div>
     </section>
 
-    <!-- Baner ze zdjęciami -->
+    <!-- Sekcja Wideo z Instagrama (zamiast baneru ze zdjęciami) -->
     <section>
-      <div class="photo-banner">
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Terapia manualna">
-          <div class="photo-overlay">Terapia Manualna & Masaż</div>
+      <div class="video-grid">
+        <div class="video-card">
+          <h3>Jak wygląda wizyta</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXZ53qMDUvI/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin: 0 auto; max-width:540px; min-width:280px; width:100%;"></blockquote>
         </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Trening medyczny">
-          <div class="photo-overlay">Trening Medyczny</div>
+        <div class="video-card">
+          <h3>Napraw swoje biodra</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYPEZlFt0xz/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin: 0 auto; max-width:540px; min-width:280px; width:100%;"></blockquote>
         </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80" alt="Rehabilitacja z dojazdem">
-          <div class="photo-overlay">Komfort w Twoim Domu</div>
+        <div class="video-card">
+          <h3>Dzień z życia FizjoRada</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXi3GDMDG1-/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin: 0 auto; max-width:540px; min-width:280px; width:100%;"></blockquote>
         </div>
       </div>
     </section>
@@ -609,7 +600,8 @@
     <span>Zadzwoń teraz</span>
   </a>
 
-</body>
-</html>
+  <!-- Skrypt do automatycznego ładowania odtwarzaczy wideo z Instagrama -->
+  <script async src="//www.instagram.com/embed.js"></script>
+
 </body>
 </html>
